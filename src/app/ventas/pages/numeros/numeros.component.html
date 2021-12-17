@@ -1,0 +1,42 @@
+
+<div class="text_layout">
+
+    <h1>Numeros</h1>
+
+    <p>Pipes incluidos en angular</p>
+</div>
+
+<div class="grid">
+    <div class="col-4">
+        <p-card header="Numeros"
+                subheader="con pipes">
+                <ul>
+                    <li>Sin Pipe: {{ventas}}</li>
+                    <br>
+                    <li><i class="pi pi-users"></i>
+                    {{ventas | number:"1.2-2"}}</li>
+                </ul>
+        </p-card>
+    </div>
+    <div class="col-4">
+        <p-card header="Monedas"
+                subheader="con pipes">
+                <ul>
+                    <li>Sin Pipe: {{ventas}}</li>
+                    <br>
+                    <li>${{ventas | currency:'CO':"":"1.1-1"}}</li>
+                </ul>
+        </p-card>
+    </div>
+    <div class="col-4">
+        <p-card header="Porcentaje"
+                subheader="con pipes">
+                <ul>
+                    <li>Sin Pipe: {{porcentaje}}</li>
+                    <br>
+                    <li>${{porcentaje |percent:"2.1-1"}}</li>
+                </ul>
+        </p-card>
+    </div>
+
+</div>

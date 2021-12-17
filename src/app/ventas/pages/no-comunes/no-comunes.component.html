@@ -1,0 +1,88 @@
+<div class="text_layout">
+
+    <h1>Pipes no comunes</h1>
+
+    <p>Pipes incluidos en angular</p>
+</div>
+
+
+<div class="grid">
+    <div class="col-6 md-6">
+        <p-fieldset legend="i18n SelectPipe" [toggleable]="true">
+            <h3>Escogue que que palabra escoguer en un texto, como el genero:</h3>
+            <p>Hola {{nombre1}}, queremos <strong>{{ genero1 | i18nSelect: pipeInvitacion }}</strong> a la reunion que tendremos mañana </p>
+            <p>Hola {{nombre2}}, queremos <strong>{{ genero2 | i18nSelect: pipeInvitacion }}</strong> a la reunion que tendremos mañana </p>
+            <br>
+            <hr>
+            <h5>Cambios Automaticos</h5>
+            <p id="nombre" name="nombre" #nombre>Hola {{nombre1}}, queremos <strong>{{ genero2 | i18nSelect: pipeInvitacion }}</strong> a la reunion que tendremos mañana </p>
+            <br>
+            <button pButton type="button" label="Cambiar Cliente" (click)="cambiarCliente()">
+            </button>
+            <br>
+        </p-fieldset>
+    </div>
+    <div class="col-6 md-6">
+        <p-fieldset legend="i18n PluralPipe" [toggleable]="true">
+            <h3>Escogue que que palabra escoguer en un texto, segun el numero:</h3>
+            <p>Actualemnte {{clientes1.length | i18nPlural:pipePlural}}</p>
+            <p>Actualemnte {{clientes2.length | i18nPlural:pipePlural}}</p>
+            <p>Actualemnte {{clientes3.length | i18nPlural:pipePlural}}</p>
+            <hr>
+            <h5>Cambios Automaticos</h5>
+            <p>Actualemnte {{clientes3.length | i18nPlural:pipePlural}}</p>
+            <button pButton type="button" label="Borrar 1 Cliente" (click)="borrarCliente()">
+            </button>
+
+        </p-fieldset>
+    </div>
+</div>
+
+<div class="grid">
+    <div class="col-6 md-6">
+        <p-fieldset legend="Pipe Slice" [toggleable]="true">
+            <h3>Toma un numero especifico de elementos del arreglo:</h3>
+            <p>Actualemnte el arrelo es; {{clientes3}}</p>
+            <hr>
+            <h3>Cambios con pipe slice:</h3>
+            <p>Los tres primeros son:  {{clientes3 | slice:0:3}}</p>
+            <p>El segundo y tercero fueron:  {{clientes3 | slice:1:3}}</p>
+
+
+        </p-fieldset>
+    </div>
+    <div class="col-6 md-6">
+        <p-fieldset legend="KeyValue Pipe" [toggleable]="true">
+            <h3>Muestra los valores de un objeto, como se hace con un array</h3>
+            <p>Actualemnte el arrelo es con pipe | json; {{persona | json}}</p>
+            <hr>
+            <h3>Mostrar con pipe KeyValue:</h3>
+            <ul *ngFor="let item of persona | keyvalue">
+                <li><strong>{{item.key |titlecase}}:</strong> {{item.value}}</li>  
+            </ul>
+        </p-fieldset>
+    </div>
+</div>
+
+<div class="grid">
+    <div class="col-6 md-6">
+        <p-fieldset legend="Pipe Slice" [toggleable]="true">
+            <h3>Toma un numero especifico de elementos del arreglo:</h3>
+            <p>Actualemnte el arrelo es; {{clientes3}}</p>
+            <hr>
+            <h3>Cambios con pipe slice:</h3>
+            <p>Los tres primeros son:  {{clientes3 | slice:0:3}}</p>
+            <p>El segundo y tercero fueron:  {{clientes3 | slice:1:3}}</p>
+
+
+        </p-fieldset>
+    </div>
+    <div class="col-6 md-6">
+        <p-fieldset legend="Async Pipe" [toggleable]="true">
+            <h3>Muestra un Observable(Evento) o una Promesa:</h3>
+            <p>{{Observable | async}}</p>
+            <p *ngIf="!(Promesa | async)">Generando menaje...</p>
+            <p>{{Promesa | async}}</p>
+        </p-fieldset>
+    </div>
+</div>
