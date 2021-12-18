@@ -1,1 +1,16 @@
-<p>ordenar works!</p>
+<div class="text_layout">
+
+    <h1>Pipe Personalizados</h1>
+
+    <p>Como hacer nuestro propio Pipe</p>
+
+    <p> Palabra: {{"nosostros"}} </p> 
+    <p> Con pipe personalizado: {{"nosostros"|mayusculas}} </p> 
+    <p> Con pipe personalizado Off: {{"nosostros"|mayusculas:false}} </p>
+    <p>---------</p>
+    <p> Palabra: {{"nosostros"|mayusculas:onOff}} </p> 
+    <button pButton type="button" label="Cambiar" (click)="cambiarMayuscula()">
+    </button> 
+</div>
+<hr>
+
