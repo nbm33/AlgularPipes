@@ -1,6 +1,7 @@
 import { Component} from '@angular/core';
 import { Heroe, Color } from '../../interfaces/heroes.interfaces';
 
+
 @Component({
   selector: 'app-ordenar',
   templateUrl: './ordenar.component.html',
@@ -9,7 +10,12 @@ import { Heroe, Color } from '../../interfaces/heroes.interfaces';
 })
 export class OrdenarComponent {
 
+  
   onOff: boolean = true;
+  vuela: boolean = true;
+  estado: string = "";
+  tipoOrden: string = "";
+
   heroes: Heroe[] = [
     { 
       nombre: "Superman",
@@ -42,6 +48,10 @@ export class OrdenarComponent {
   
   cambiarMayuscula(){
     this.onOff = !this.onOff ;
+  }
+
+  Ordenar(ordenar:string){
+    this.tipoOrden=ordenar
   }
 
   cambiar(){
